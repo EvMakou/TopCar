@@ -140,7 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func createRoadStrip() {
+    @objc func createRoadStrip() {
         let leftRoadStrip = SKShapeNode(rectOf: CGSize(width: 10, height: 40))
         leftRoadStrip.strokeColor = SKColor.white
         leftRoadStrip.fillColor = SKColor.white
@@ -187,7 +187,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func removeItems() {
+    @objc func removeItems() {
         for child in children {
             if child.position.y < -self.size.height - 100{
                 child.removeFromParent()
@@ -227,7 +227,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func leftTraffic() {
+    @objc func leftTraffic() {
         if !stopEverything {
         let leftTrafficItem: SKSpriteNode!
         let randomNumber = Helper().randomBetweenTwoNumbers(firstNumber: 1, secondNumber: 8)
@@ -270,7 +270,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func rightTraffic() {
+    @objc func rightTraffic() {
         if !stopEverything {
         let rightTrafficItem: SKSpriteNode!
         let randomNumber = Helper().randomBetweenTwoNumbers(firstNumber: 1, secondNumber: 8)
@@ -327,7 +327,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    func startCountDown() {
+    @objc func startCountDown() {
         if countDown > 0 {
             if countDown < 4 {
                 let countDownLabel = SKLabelNode()
@@ -358,7 +358,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     }
     
-    func increaseScore() {
+    @objc func increaseScore() {
         if !stopEverything {
             score += 1
             scoreText.text = String(score)
